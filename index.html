@@ -8,6 +8,23 @@
   <title>Comunidade Destrava</title>
   <style>
 
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+    .centralizar{
+      text-align: center;
+    }
+    .frase-estilizada2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.8rem;
+      color: #2c2c2c;
+      margin: 0;
+      text-align: center;
+    }
+
     .frase-estilizada {
     font-family: 'Dancing Script', cursive;
     font-size: 1.8rem;
@@ -18,7 +35,7 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #388e3c;
+      background-color: #469b4a3a;
       color: #333;
       margin: 0;
       padding: 0;
@@ -31,11 +48,11 @@
     }
     header img {
       background: #fff;
-      padding: 5px;
-      border-radius: 5px;
-      max-width: 500px;
+      padding: 7px;
+      border-radius: 7px;
+      max-width: 700px;
       height: auto;
-      margin-bottom: 5px;
+      margin-bottom: 7px;
     }
     header h1 {
       font-size: 2.5rem;
@@ -55,7 +72,7 @@
       line-height: 1.7;
     }
     section h2 {
-      color: #388e3c;
+      color: #1c491e;
       margin-top: 0;
     }
     .button {
@@ -81,6 +98,23 @@
       font-size: 0.9rem;
       color: #555;
     }
+
+.buttonAnimado {
+  display: inline-block;
+  background-color: #388e3c;
+  color: #fff;
+  padding: 16px 32px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: background 0.3s ease;
+  animation: pulse 1.5s infinite;
+}
+
+
   </style>
 </head>
 <body>
@@ -90,29 +124,33 @@
   <p class="frase-estilizada">Emagreça com leveza, consciência e apoio de quem entende você!</p>
 </header>
 
+<script src="https://www.mercadopago.com.br/integrations/v1/web-payment-checkout.js"
+data-preference-id="195013619-de66a2be-85d5-4e29-944a-2ac37f27f490" data-source="button">
+</script>
+
 <section>
   <h2>🔓 Destrave a mente e o corpo para uma transformação real!</h2>
   <p>Você já tentou de tudo, mas sente que algo sempre te puxa de volta? Dietas restritivas, culpa, efeito sanfona... a verdade é que <b> o problema não está em você — está no método.</b></p>
-  <p>Na Comunidade Destrava, você terá acompanhamento psicológico e nutricional durante 6 semanas, com ferramentas que atuam na sua mente, emoções e rotina, para transformar de verdade a sua relação com a comida — e com você.</p>
+  <p>Na <b>Comunidade Destrava</b>, você terá <b>acompanhamento psicológico e nutricional durante 6 semanas</b>, com ferramentas que atuam na sua mente, emoções e rotina, para <b>transformar de verdade a sua relação com a comida — e com você.</b></p>
 </section>
 
 <section>
   <h2>📅 Como vai funcionar?</h2>
-  <p>Durante 6 semanas, você fará parte de uma comunidade exclusiva no WhatsApp, onde será acompanhada de perto por duas nutricionistas e uma psicóloga.</p>
-  <p>É 100% ONLINE, você vai receber conteúdos semanais, participar de encontros ao vivo, realizar desafios práticos, e terá um espaço de acolhimento, aprendizado e evolução pessoal e alimentar.</p>
+  <p>Durante <b>6 semanas</b>, você fará parte de uma <b>comunidade exclusiva no WhatsApp</b>, onde será acompanhada de perto por <b>duas nutricionistas e uma psicóloga.</b></p>
+  <p>É 100% ONLINE, você vai receber <b>conteúdos semanais</b>, participar de <b>encontros ao vivo</b>, realizar <b>desafios práticos</b>, e terá um espaço de acolhimento, aprendizado e evolução pessoal e alimentar.</p>
 </section>
 
 <section>
   <h2>🎁 O que você recebe ao entrar</h2>
   <ul>
-    <li>✅ Grupo exclusivo no WhatsApp</li>
-    <li>✅ Acompanhamento de 2 nutricionistas e 1 psicóloga</li>
-    <li>✅ 6 encontros ao vivo com conteúdo prático</li>
-    <li>✅ Vídeos, áudios e materiais de apoio semanais</li>
-    <li>✅ Desafios para colocar o conhecimento em ação</li>
-    <li>✅ Cardápio qualitativo com sugestões para cada refeição</li>
-    <li>✅ Certificado de participação</li>
-    <li>✅ Sorteio para o participante mais engajado (a)</li>
+✅ Grupo exclusivo no WhatsApp <br>
+✅ Acompanhamento de 2 nutricionistas e 1 psicóloga<br>
+✅ 6 encontros ao vivo com conteúdo prático<br>
+✅ Vídeos, áudios e materiais de apoio semanais<br>
+✅ Desafios para colocar o conhecimento em ação<br>
+✅ Cardápio qualitativo com sugestões para cada refeição<br>
+✅ Certificado de participação<br>
+✅ Sorteio para o participante mais engajado (a)
   </ul>
 </section>
 
@@ -124,18 +162,29 @@
     <li>Sente que precisa de apoio para sair do “efeito sanfona”</li>
     <li>Quer emagrecer com consciência, respeitando seu corpo e sua rotina</li>
     <li>Busca motivação e desafios leves para colocar a mudança em prática</li>
+     <br>
   </ul>
-  <strong>VAGAS LIMITADAS!!</strong>
+<p style="text-align: center;">
+  <a href="https://mpago.la/2JGrPv2" class="buttonAnimado"
+     style="display: inline-block; background-color: #d32f2f; color: white; 
+            padding: 14px 28px; font-size: 1.2rem; font-weight: bold; 
+            text-decoration: none; border-radius: 8px; 
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+    🔐 VAGAS LIMITADAS!! GARANTA SUA VAGA
+  </a>
+</p>
+
+
 </section>
 
 <section>
   <h2>📚 Temas das Semanas</h2>
-  <p><strong>Semana 1 – Como Funciona o Emagrecimento:</strong> entenda o que realmente funciona e o que não faz sentido.</p>
-  <p><strong>Semana 2 – Hábitos:</strong> transforme seus hábitos de forma leve e eficaz.</p>
-  <p><strong>Semana 3 – Organização e Planejamento (Parte 1):</strong> armário, geladeira, rotina alimentar.</p>
-  <p><strong>Semana 4 – Organização e Planejamento (Parte 2):</strong> boas escolhas no mercado, produtos.</p>
-  <p><strong>Semana 5 – Comportamento:</strong> gatilhos, sabotadores e padrões emocionais.</p>
-  <p><strong>Semana 6 – Constância e Autonomia:</strong> manter os resultados e seguir com confiança.</p>
+  <p><strong>Semana 1 – Como Funciona o Emagrecimento:</strong> Desmistificando o emagrecimento: entenda o que realmente funciona e o que não faz sentido.</p>
+  <p><strong>Semana 2 – Hábitos:</strong> Descubra como seus hábitos moldam sua vida — e como transformá-los de forma leve e eficaz.</p>
+  <p><strong>Semana 3 – Organização e Planejamento (Parte 1):</strong> Aprenda a se organizar com clareza: armário, geladeira, lista de compras inteligente e rotina alimentar.</p>
+  <p><strong>Semana 4 – Organização e Planejamento (Parte 2):</strong> Sugestões práticas de refeições, como fazer boas escolhas no mercado, diferenças entre produtos.</p>
+  <p><strong>Semana 5 – Comportamento:</strong> Entenda seus gatilhos, sabotadores e padrões emocionais relacionados à comida.</p>
+  <p><strong>Semana 6 – Constância e Autonomia:</strong> Como continuar após o programa, manter os resultados e confiar na sua capacidade de seguir sozinho (a).</p>
 </section>
 
 <section>
@@ -153,15 +202,23 @@
 <section>
   <h2>💥 Por que escolher o Método Destrava?</h2>
   <ul>
-    <li>Integra mente e corpo: você não vai mais lutar contra si mesma.</li>
+    <li>Integra mente e corpo: você não vai mais lutar contra si mesmo (a).</li>
     <li>É leve e possível: sem restrições absurdas, com foco na realidade.</li>
-    <li>Você não estará sozinha: será guiada por 3 profissionais, com apoio do grupo.</li>
+    <li>Você não estará sozinho (a): será guiada por 3 profissionais, com apoio do grupo.</li>
     <li>Resultados reais e sustentáveis: o objetivo é que você continue mesmo depois das 6 semanas.</li>
   </ul>
-  <p><strong>Mudança real começa de dentro para fora.</strong></p>
-  <p>🔐 Garanta sua vaga agora mesmo!</p>
-  <p>As vagas são limitadas para garantir um acompanhamento de qualidade. Clique no botão abaixo e faça parte da transformação!</p>
-  <a href="https://mpago.la/1SDsw6x" class="button">👉 Quero entrar na Comunidade Destrava!</a>
+
+  <p class="frase-estilizada2">A mudança real começa de dentro para fora.</p>
+
+</section>
+
+<section>
+    <p style="text-align: center;">🔐 Garanta sua vaga agora mesmo!</p>
+  <p style="text-align: center;">As vagas são limitadas para garantir um acompanhamento de qualidade.<br> Clique no botão abaixo e faça parte da transformação!</p>
+<div style="text-align: center;">
+
+  <div style="text-align: center;">
+  <a href="https://mpago.la/2JGrPv2" class="buttonAnimado">QUERO ENTRAR NA COMUNIDADE DESTRAVA</a>
 </section>
 
 <footer>
