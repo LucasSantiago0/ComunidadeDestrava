@@ -1,143 +1,178 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>5 Chaves para o Emagrecimento</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Comunidade Destrava</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+    * {
+      box-sizing: border-box;
+    }
 
     body {
-      font-family: 'Raleway', sans-serif;
       margin: 0;
-      padding: 0;
-      background: linear-gradient(145deg, #f4ecd6, #d4e3d0);
-      color: #2e4939;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
     }
-    .hero {
+
+    header {
+      background-color: #388e3c;
+      color: #fff;
       text-align: center;
-      padding: 60px 20px;
+      padding: 60px 20px 40px;
     }
-    .hero img {
-      max-width: 120px;
-      margin-bottom: 20px;
-    }
-    .hero h1 {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
-    }
-    .hero p {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-    }
-    .button {
-      background: #d35c33;
-      color: white;
-      padding: 15px 30px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 10px;
-      text-decoration: none;
-      transition: background 0.3s;
-      display: inline-block;
-    }
-    .button:hover {
-      background: #a54621;
-    }
-    .section {
-      padding: 10px 15px;
-      max-width: 800px;
-      margin: auto;
-    }
-    .section h2 {
-      color: #1d3a29;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    .benefits li {
-      margin-bottom: 10px;
-    }
-    .team {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .team-member {
+
+    header img {
       background: #fff;
       padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      max-width: 350px;
+      height: auto;
+      margin-bottom: 5px;
     }
-    .cta {
-      text-align: center;
-      padding: 60px 20px;
-      background: #fefaf4;
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 5px;
     }
-    .cta h2 {
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0;
+    }
+
+    section {
+      background-color: #fff;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    section h2 {
+      color: #388e3c;
+      font-size: 1.8rem;
       margin-bottom: 20px;
     }
-    .buy-button {
-      margin-top: 20px;
-      background: #388e3c;
-      padding: 15px 25px;
-      font-size: 1rem;
-      border-radius: 10px;
-      text-decoration: none;
-      color: #fff;
-      display: inline-block;
+
+    ul, ol {
+      padding-left: 20px;
     }
-    .buy-button:hover {
-      background: #25642a;
+
+    .profissional {
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #388e3c;
+      color: #fff;
+      padding: 16px 32px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: background 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #2e7d32;
+    }
+
+    footer {
+      background-color: #e0e0e0;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #555;
     }
   </style>
 </head>
 <body>
 
-  <div class="hero">
-    <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
-      <img src="Logo.png" alt="Ícone Chave Verde" style="max-width: 250px;">
-      <h1 style="font-size: 3rem; color: #388e3c; margin: 0;">Comunidade Destrava</h1>
-    </div>
-    <p>Comece sua transformação com leveza e consciência.<br>
-       Dicas práticas, desafios diários e apoio profissional!</p>
-       <a href="https://mpago.la/1SDsw6x" class="buy-button">Participe da Comunidade Destrava</a>
-  </div>
+<header>
+  <img src="Logo.png" alt="Logo Comunidade Destrava">
+  <h1>🔓 Método Destrava</h1>
+  <p>Emagreça com leveza, consciência e apoio de quem entende você!</p>
+</header>
 
-  <div class="section">
-    <h2>✅ O que você vai receber:</h2>
-    <ul class="benefits">
-      <li>Acompanhamento com nutricionistas e psicóloga</li>
-      <li>Dicas práticas para o dia a dia</li>
-      <li>Desafios diários para transformar seus hábitos</li>
-      <li>Prêmios e sorteios</li>
-      <li>Grupo exclusivo no WhatsApp</li>
-    </ul>
-  </div>
+<section>
+  <h2>Transforme sua relação com a comida</h2>
+  <p>Você já tentou de tudo, mas sente que algo sempre te puxa de volta? Dietas restritivas, culpa, efeito sanfona... o problema não está em você — está no método.</p>
+  <p>Na <strong>Comunidade Destrava</strong>, você terá acompanhamento psicológico e nutricional durante 6 semanas para destravar corpo, mente e emoções.</p>
+</section>
 
-  <div class="section">
-    <h2>👩‍⚕️ Quem está com você:</h2>
-    <div class="team">
-      <div class="team-member">
-        <strong>Laís</strong> – Nutricionista especialista em comportamento alimentar
-      </div>
-      <div class="team-member">
-        <strong>Nathália</strong> – Psicóloga com foco em mudança de hábitos
-      </div>
-      <div class="team-member">
-        <strong>Nutricionista Convidada</strong> – Apoio nos desafios e orientações práticas
-      </div>
-    </div>
-  </div>
+<section>
+  <h2>📅 Como funciona?</h2>
+  <ul>
+    <li>Grupo exclusivo no WhatsApp</li>
+    <li>Acompanhamento com 2 nutricionistas e 1 psicóloga</li>
+    <li>6 encontros ao vivo com conteúdo prático</li>
+    <li>Materiais semanais: vídeos, áudios, PDFs</li>
+    <li>Desafios práticos + cardápio qualitativo</li>
+    <li>Certificado de participação</li>
+    <li>Sorteio para o participante mais engajado</li>
+  </ul>
+</section>
 
-  <div class="cta">
-    <h2>🚀 Transforme seu jeito de encarar o emagrecimento</h2>
-    <p>Adquira o Método Destrava e inicie sua mudança definitiva.</p>
-    <a href="https://mpago.la/1SDsw6x" class="buy-button">Participe da Comunidade Destrava</a>
-  </div>
+<section>
+  <h2>✨ Para quem é esse método?</h2>
+  <ul>
+    <li>Está cansado(a) de dietas que não funcionam a longo prazo</li>
+    <li>Quer aprender a comer sem culpa ou terrorismo nutricional</li>
+    <li>Busca apoio emocional e psicológico na alimentação</li>
+    <li>Deseja motivação leve para colocar mudanças em prática</li>
+  </ul>
+</section>
 
-<script src="https://www.mercadopago.com.br/integrations/v1/web-payment-checkout.js"
-data-preference-id="195013619-c5463ac3-a527-4275-a943-7b2db3920504" data-source="button">
-</script>
+<section>
+  <h2>📚 Temas das 6 Semanas</h2>
+  <ol>
+    <li><strong>Como Funciona o Emagrecimento:</strong> o que realmente funciona</li>
+    <li><strong>Hábitos:</strong> como transformá-los</li>
+    <li><strong>Organização e Planejamento 1:</strong> armário, geladeira, rotina alimentar</li>
+    <li><strong>Organização e Planejamento 2:</strong> compras, escolhas inteligentes</li>
+    <li><strong>Comportamento:</strong> gatilhos, sabotadores e emoções</li>
+    <li><strong>Constância e Autonomia:</strong> seguir firme após o programa</li>
+  </ol>
+</section>
+
+<section>
+  <h2>👩‍⚕️ Quem vai te acompanhar</h2>
+  <div class="profissional">
+    <strong>🍏 Lais Barros</strong> | Nutricionista · CRN3-89262<br>
+    Reeducação alimentar e construção de hábitos duradouros.
+  </div>
+  <div class="profissional">
+    <strong>🍽️ Natália Alves</strong> | Nutricionista · CRN3-83997<br>
+    Emagrecimento com foco leve, prático e sem extremismos.
+  </div>
+  <div class="profissional">
+    <strong>🧠 Laryssa Queiroz</strong> | Psicóloga · CRP6-200556<br>
+    Terapia Cognitivo-Comportamental para mudar padrões sabotadores.
+  </div>
+</section>
+
+<section>
+  <h2>💥 Por que escolher o Método Destrava?</h2>
+  <ul>
+    <li>Integra mente e corpo para resultados verdadeiros</li>
+    <li>Leve, sem restrições absurdas, e aplicável à rotina</li>
+    <li>Acompanhamento por 3 profissionais e apoio do grupo</li>
+    <li>Resultados reais, duradouros e com autonomia</li>
+  </ul>
+  <a href="https://seulinkdepagamento.com" class="button">👉 Quero entrar na Comunidade Destrava!</a>
+</section>
+
+<footer>
+  © 2025 Comunidade Destrava · Todos os direitos reservados.
+</footer>
 
 </body>
 </html>
