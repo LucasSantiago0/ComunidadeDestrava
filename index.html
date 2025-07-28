@@ -146,6 +146,7 @@
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
       line-height: 1.7;
     }
+    
     section h2 {
       color: #1c491e;
       margin-top: 0;
@@ -167,7 +168,7 @@
       background-color: #2e7d32;
     }
     footer {
-      background-color: #e0e0e0;
+      background-color:  #ffffff;
       text-align: center;
       padding: 20px;
       font-size: 0.9rem;
@@ -189,22 +190,80 @@
   animation: pulse 1.5s infinite;
 }
 
+.equipe {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.titulo {
+  text-align: center;
+  color: #1d3557;
+  margin-bottom: 40px;
+  font-size: 1.8rem;
+}
+
+.perfil {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+.perfil img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.perfil .nome {
+  font-weight: bold;
+  color: #1d3557;
+}
+
+.perfil p {
+  margin: 5px 0;
+  color: #1d3557;
+  line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+  .perfil {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .perfil img {
+    margin-bottom: 10px;
+  }
+}
+
+
   </style>
 </head>
 <body>
+
+<script src="https://www.mercadopago.com.br/integrations/v1/web-payment-checkout.js"
+data-preference-id="195013619-c5463ac3-a527-4275-a943-7b2db3920504" data-source="button">
+</script>
 
   <!-- Modal com formulário -->
   <div id="modalForm" class="modal">
     <div class="modal-content">
       <span class="close" id="closeModalBtn">&times;</span>
       <h2 style="text-align: center;">Preencha seus dados:</h2>
-      <form id="dadosForm">
-        <input type="text" id="nome" placeholder="Nome Completo" required>
-        <input type="text" id="cpf" placeholder="CPF" required>
-        <input type="email" id="email" placeholder="E-mail" required>
-        <input type="tel" id="celular" placeholder="Celular" required>
+
+      <form id="dadosForm" action="salvar.php" method="post">
+        <input type="text" name="nome" placeholder="Nome Completo" required>
+        <input type="text" name="cpf" placeholder="CPF" required>
+        <input type="email" name="email" placeholder="E-mail" required>
+        <input type="tel" name="celular" placeholder="Celular" required>
         <button type="submit" class="button">Fazer Parte</button>
       </form>
+
 
       <!-- Botão do Mercado Pago (escondido até o envio) -->
       <div id="mp-button" style="display: none;">
@@ -221,21 +280,21 @@
   <p class="frase-estilizada">Emagreça com leveza, consciência e apoio de quem entende você!</p>
 </header>
 
-<section>
-  <h2>🔓 Destrave a mente e o corpo para uma transformação real!</h2>
-  <p>Você já tentou de tudo, mas sente que algo sempre te puxa de volta? Dietas restritivas, culpa, efeito sanfona... a verdade é que <b> o problema não está em você — está no método.</b></p>
-  <p>Na <b>Comunidade Destrava</b>, você terá <b>acompanhamento psicológico e nutricional durante 6 semanas</b>, com ferramentas que atuam na sua mente, emoções e rotina, para <b>transformar de verdade a sua relação com a comida — e com você.</b></p>
+<section style="background-color: #1d3557">
+  <h2 style="color:  #ffffff;">🔓 Destrave a mente e o corpo para uma transformação real!</h2>
+  <p style="color: #ffffff">Você já tentou de tudo, mas sente que algo sempre te puxa de volta? Dietas restritivas, culpa, efeito sanfona... a verdade é que <b> o problema não está em você — está no método.</b></p>
+  <p style="color: #ffffff">Na <b>Comunidade Destrava</b>, você terá <b>acompanhamento psicológico e nutricional durante 6 semanas</b>, com ferramentas que atuam na sua mente, emoções e rotina, para <b>transformar de verdade a sua relação com a comida — e com você.</b></p>
 </section>
 
-<section>
-  <h2>📅 Como vai funcionar?</h2>
-  <p>Durante <b>6 semanas</b>, você fará parte de uma <b>comunidade exclusiva no WhatsApp</b>, onde será acompanhada de perto por <b>duas nutricionistas e uma psicóloga.</b></p>
-  <p>É 100% ONLINE, você vai receber <b>conteúdos semanais</b>, participar de <b>encontros ao vivo</b>, realizar <b>desafios práticos</b>, e terá um espaço de acolhimento, aprendizado e evolução pessoal e alimentar.</p>
+<section class="equipe">
+  <h2 style="color:#1d3557">📅 Como vai funcionar?</h2>
+  <p style="color:#1d3557">Durante <b>6 semanas</b>, você fará parte de uma <b>comunidade exclusiva no WhatsApp</b>, onde será acompanhada de perto por <b>duas nutricionistas e uma psicóloga.</b></p>
+  <p style="color:#1d3557">É 100% ONLINE, você vai receber <b>conteúdos semanais</b>, participar de <b>encontros ao vivo</b>, realizar <b>desafios práticos</b>, e terá um espaço de acolhimento, aprendizado e evolução pessoal e alimentar.</p>
 </section>
 
-<section>
-  <h2>🎁 O que você recebe ao entrar</h2>
-  <ul>
+<section style="background-color: #1d3557">
+  <h2 style = "color: #c59c2a;">🎁 O que você recebe ao entrar</h2>
+  <ul style = "color: #ffffff;">
 ✅ Grupo exclusivo no WhatsApp <br>
 ✅ Acompanhamento de 2 nutricionistas e 1 psicóloga<br>
 ✅ 6 encontros ao vivo com conteúdo prático<br>
@@ -247,9 +306,9 @@
   </ul>
 </section>
 
-<section>
-  <h2>✨ Esse método é pra você que...</h2>
-  <ul>
+<section class="equipe">
+  <h2 style="color:#1d3557">✨ Esse método é pra você que...</h2>
+  <ul style="color:#1d3557">
     <li>Está cansado(a) de dietas que não funcionam a longo prazo</li>
     <li>Quer aprender a se alimentar melhor sem terrorismo nutricional</li>
     <li>Sente que precisa de apoio para sair do “efeito sanfona”</li>
@@ -270,8 +329,8 @@
 
 </section>
 
-<section>
-  <h2>📚 Temas das Semanas</h2>
+<section style="background-color: #1d3557;color: #ffffff;">
+  <h2 style="color: #ffffff;">📚 Temas das Semanas</h2>
   <p><strong>Semana 1 – Como Funciona o Emagrecimento:</strong> Desmistificando o emagrecimento: entenda o que realmente funciona e o que não faz sentido.</p>
   <p><strong>Semana 2 – Hábitos:</strong> Descubra como seus hábitos moldam sua vida — e como transformá-los de forma leve e eficaz.</p>
   <p><strong>Semana 3 – Organização e Planejamento (Parte 1):</strong> Aprenda a se organizar com clareza: armário, geladeira, lista de compras inteligente e rotina alimentar.</p>
@@ -280,17 +339,34 @@
   <p><strong>Semana 6 – Constância e Autonomia:</strong> Como continuar após o programa, manter os resultados e confiar na sua capacidade de seguir sozinho (a).</p>
 </section>
 
-<section>
-  <h2>👩‍⚕️ Quem estará com você nessa jornada</h2>
-  <p>🍏 <strong>Lais Barros</strong> | Nutricionista | CRN3-89262<br>
-  Reeducação alimentar e mudança de hábitos, te acompanharei na construção de um estilo de vida mais equilibrado e duradouro.</p>
+<section class="equipe">
+  <h2 class="titulo">Quem estará com você nessa jornada</h2>
 
-  <p>🍽️ <strong>Natália Alves</strong> | Nutricionista | CRN3-83997<br>
-  Focada em emagrecimento e ganho de massa muscular, trarei orientações práticas para uma alimentação saudável, leve e sem extremismos.</p>
+  <div class="perfil">
+    <img src="Logo2.png" alt="Lais Barros">
+    <div>
+      <p><span class="nome">🍏 Lais Barros</span> | Nutricionista | <strong>CRN3-89262</strong></p>
+      <p>Reeducação alimentar e mudança de hábitos, te acompanharei na construção de um estilo de vida mais equilibrado e duradouro.</p>
+    </div>
+  </div>
 
-  <p>🧠 <strong>Laryssa Queiroz</strong> | Psicóloga | CRP6-200556<br>
-  Com a abordagem Terapia Cognitivo-Comportamental (TCC), irei te ajudar a identificar e transformar crenças e comportamentos sabotadores que atrapalham sua relação com a comida.</p>
+  <div class="perfil">
+    <img src="Logo2.png" alt="Natália Alves">
+    <div>
+      <p><span class="nome">🍽️ Natália Alves</span> | Nutricionista | <strong>CRN3-83997</strong></p>
+      <p>Focada em emagrecimento e ganho de massa muscular, trarei orientações práticas para uma alimentação saudável, leve e sem extremismos.</p>
+    </div>
+  </div>
+
+  <div class="perfil">
+    <img src="Logo2.png" alt="Laryssa Queiroz">
+    <div>
+      <p><span class="nome">🧠 Laryssa Queiroz</span> | Psicóloga | <strong>CRP6-200556</strong></p>
+      <p>Com a abordagem Terapia Cognitivo-Comportamental (TCC), irei te ajudar a identificar e transformar crenças e comportamentos sabotadores que atrapalham sua relação com a comida.</p>
+    </div>
+  </div>
 </section>
+
 
 <section>
   <h2>💥 Por que escolher o Método Destrava?</h2>
@@ -305,7 +381,7 @@
 
 </section>
 
-<section>
+<section class="equipe">
     <p style="text-align: center;">🔐 Garanta sua vaga agora mesmo!</p>
   <p style="text-align: center;">As vagas são limitadas para garantir um acompanhamento de qualidade.<br> Clique no botão abaixo e faça parte da transformação!</p>
 <div style="text-align: center;">
@@ -318,59 +394,42 @@
   © 2025 Comunidade Destrava · Todos os direitos reservados.
 </footer>
 
-<!-- Script para controlar o modal -->
-  <script>
-    const modal = document.getElementById('modalForm');
-    const openModalBtn1 = document.getElementById('openModalBtn1');
-    const openModalBtn2 = document.getElementById('openModalBtn2');
-    const closeModalBtn = document.getElementById('closeModalBtn');
-    const form = document.getElementById('dadosForm');
-    const mpButton = document.getElementById('mp-button');
+<script>
+  const modal = document.getElementById('modalForm');
+  const openModalBtn1 = document.getElementById('openModalBtn1');
+  const openModalBtn2 = document.getElementById('openModalBtn2');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+  const form = document.getElementById('dadosForm');
+  const mpButton = document.getElementById('mp-button');
 
-// Função para abrir o modal
-openModalBtn1.addEventListener('click', function(e) {
-  e.preventDefault(); // Previne o comportamento padrão
-  modal.style.display = 'block';  // Exibe o modal
-});
+  openModalBtn1?.addEventListener('click', e => {
+    e.preventDefault();
+    modal.style.display = 'block';
+    form.style.display = 'flex';         // mostra o formulário
+    mpButton.style.display = 'none';     // esconde o botão de pagamento
+    form.reset();                        // limpa os campos do formulário
 
-openModalBtn2.addEventListener('click', function(e) {
-  e.preventDefault(); // Previne o comportamento padrão
-  modal.style.display = 'block';  // Exibe o modal
-});
+  });
 
-// Função para fechar o modal
-closeModalBtn.addEventListener('click', function() {
-  modal.style.animation = 'fadeOut 0.5s ease-out';
-  setTimeout(function() {
-    modal.style.display = 'none';  // Esconde o modal após a animação
-  }, 500);  // Aguarda o tempo da animação
-});
+  openModalBtn2?.addEventListener('click', e => {
+    e.preventDefault();
+    modal.style.display = 'block';
+    form.style.display = 'flex';         // mostra o formulário
+    mpButton.style.display = 'none';     // esconde o botão de pagamento
+    form.reset();        
+  });
 
-// Fecha o modal se o usuário clicar fora do conteúdo
-window.addEventListener('click', function(event) {
-  if (event.target === modal) {
-    modal.style.display = 'none';
-  }
-});
+  closeModalBtn?.addEventListener('click', () => {
+    modal.style.animation = 'fadeOut 0.5s ease-out';
+    setTimeout(() => modal.style.display = 'none', 500);
+  });
 
-// Lógica para o formulário
-form.addEventListener('submit', function(e) {
-  e.preventDefault();
-
-  const nome = document.getElementById('nome').value.trim();
-  const cpf = document.getElementById('cpf').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const celular = document.getElementById('celular').value.trim();
-
-  if (nome && cpf && email && celular) {
-    form.style.display = 'none';
-    mpButton.style.display = 'block';
-    alert("Dados preenchidos com sucesso! Agora, clique no botão para completar o pagamento.");
-  } else {
-    alert("Preencha todos os campos para continuar.");
-  }
-});
-  </script>
-
+  window.addEventListener('click', event => {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  })
+  
+</script>
 </body>
 </html>
