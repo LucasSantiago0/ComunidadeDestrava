@@ -315,8 +315,7 @@
 <body>
 
   <!-- Modal com formulário -->
-  <!-- Modal removido -->
-<!-- <div id="modalForm" class="modal">
+  <div id="modalForm" class="modal">
     <div class="modal-content">
       <span class="close" id="closeModalBtn">&times;</span>
       <h2 style="text-align: center;">Preencha seus dados:</h2>
@@ -338,7 +337,7 @@
         </script>
       </div>
     </div>
-  </div> -->
+  </div>
 
 <header>
   <img src="Logo2.png" alt="Logo Comunidade Destrava">
@@ -382,7 +381,7 @@
      <br>
   </ul>
 <p style="text-align: center;">
-  <a href="javascript:void(0)" href="https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=195013619-de66a2be-85d5-4e29-944a-2ac37f27f490" target="_blank" class="buttonAnimado"
+  <a href="javascript:void(0)" id="openModalBtn2" class="buttonAnimado"
      style="display: inline-block; background-color: #a01414; color: white; 
             padding: 14px 28px; font-size: 1.2rem; font-weight: bold; 
             text-decoration: none; border-radius: 25px; 
@@ -426,7 +425,7 @@
       <p style="color: #ffffff;"><span style="color: #ffffff" class="nome">🍏 Lais Barros</span> | Nutricionista | <strong>CRN3-89262</strong></p>
       <p style="color: #ffffff;">Reeducação alimentar e mudança de hábitos, te acompanharei na construção de um estilo de vida mais equilibrado e duradouro.</p>
     </div>
-  </div> -->
+  </div>
 
   <div class="perfil">
     <img src="Logo2.png" alt="Natália Alves">
@@ -434,7 +433,7 @@
       <p style="color: #ffffff;"><span style="color: #ffffff" class="nome">🍽️ Natália Alves</span> | Nutricionista | <strong>CRN3-83997</strong></p>
       <p style="color: #ffffff;">Focada em emagrecimento e ganho de massa muscular, trarei orientações práticas para uma alimentação saudável, leve e sem extremismos.</p>
     </div>
-  </div> -->
+  </div>
 
   <div class="perfil">
     <img src="Logo2.png" alt="Laryssa Queiroz">
@@ -442,7 +441,7 @@
       <p style="color: #ffffff;"><span style="color: #ffffff" class="nome">🧠 Laryssa Queiroz</span> | Psicóloga | <strong>CRP6-200556</strong></p>
       <p style="color: #ffffff;">Com a abordagem Terapia Cognitivo-Comportamental (TCC), irei te ajudar a identificar e transformar crenças e comportamentos sabotadores que atrapalham sua relação com a comida.</p>
     </div>
-  </div> -->
+  </div>
 </section>
 
 <section class="comparativo">
@@ -474,7 +473,7 @@
   </p>
 
   <div style="text-align: center; ">
-    <a style="background-color: #1b4332" href="#" href="https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=195013619-de66a2be-85d5-4e29-944a-2ac37f27f490" target="_blank" class="buttonAnimado">QUERO ENTRAR AGORA MESMO!</a>
+    <a style="background-color: #1b4332" href="#" id="openModalBtn1" class="buttonAnimado">QUERO ENTRAR AGORA MESMO!</a>
   </div>
 </section>
 
@@ -483,6 +482,42 @@
   © 2025 Comunidade Destrava · Todos os direitos reservados.
 </footer>
 
+<script>
+  const modal = document.getElementById('modalForm');
+  const openModalBtn1 = document.getElementById('openModalBtn1');
+  const openModalBtn2 = document.getElementById('openModalBtn2');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+  const form = document.getElementById('dadosForm');
+  const mpButton = document.getElementById('mp-button');
 
+  openModalBtn1?.addEventListener('click', e => {
+    e.preventDefault();
+    modal.style.display = 'block';
+    form.style.display = 'flex';         // mostra o formulário
+    mpButton.style.display = 'none';     // esconde o botão de pagamento
+    form.reset();                        // limpa os campos do formulário
+
+  });
+
+  openModalBtn2?.addEventListener('click', e => {
+    e.preventDefault();
+    modal.style.display = 'block';
+    form.style.display = 'flex';         // mostra o formulário
+    mpButton.style.display = 'none';     // esconde o botão de pagamento
+    form.reset();        
+  });
+
+  closeModalBtn?.addEventListener('click', () => {
+    modal.style.animation = 'fadeOut 0.5s ease-out';
+    setTimeout(() => modal.style.display = 'none', 500);
+  });
+
+  window.addEventListener('click', event => {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  })
+  
+</script>
 </body>
 </html>
