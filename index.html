@@ -312,12 +312,26 @@
   background-color: #1b4332;
 }
 
+.logo-responsiva {
+  max-width: 90%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .logo-responsiva {
+    max-width: 70%;
+  }
+}
+
+
   </style>
 </head>
 <body>
 
 <header>
-  <img src="Logo2.png" alt="Logo Comunidade Destrava">
+  <img src="Logo2.png" alt="Logo Comunidade Destrava" class="logo-responsiva">
   <p style="color:#1d3557" class="frase-estilizada">Emagreça com leveza, consciência e apoio de quem entende você!</p>
 </header>
 
