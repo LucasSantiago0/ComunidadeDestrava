@@ -8,10 +8,10 @@ $email   = $_POST['email']   ?? '';
 $celular = $_POST['celular'] ?? '';
 
 // Conecta no MySQL
-$host = '10.129.76.12';
-$db   = 'usuarios_formulario';
-$user = 'user_lala';
-$pass = 'userlala2518.';
+$host = ''
+$db   = ''
+$user = ''
+$pass = ''
 
 $conn = new mysqli($host, $user, $pass, $db);
 
