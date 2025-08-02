@@ -3,86 +3,110 @@
 <html lang="pt-BR">
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Comunidade Destrava</title>
   <style>
-
-
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.6);
-      animation: fadeIn 0.5s ease-out;
+    :root {
+      --cor-principal: #1d3557;
+      --cor-secundaria: #ffffff;
+      --cor-botao: #388e3c;
+      --cor-destaque: #c59c2a;
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    @keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-
-    .modal-content {
-      background-color: #fff;
-      margin: 10% auto;
-      padding: 20px;
-      border-radius: 10px;
-      width: 100%; /* Garantindo que o conteúdo tenha 100% de largura do seu container */
-      max-width: 400px; /* Limitar o tamanho máximo */
-      position: relative;
-      box-sizing: border-box; /* Garantir que padding não afetará a largura total */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
     }
 
-
-    .close {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 28px;
-      cursor: pointer;
+    header, section, footer {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
     }
 
-    input {
-      padding: 12px; /* Aumentei o padding para melhorar o visual */
-      font-size: 1rem;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      width: calc(100% - 24px); /* Subtrai o padding para ajustar o tamanho corretamente */
-      margin: 0 auto; /* Garante que os campos fiquem centralizados */
-      display: block; /* Para garantir que cada campo ocupe a linha inteira */
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 12px; /* Já estava aqui, isso deve garantir um bom espaçamento entre os campos */
-      align-items: center; /* Garante que os campos fiquem centralizados */
-    }
-
-
-    #mp-button {
+    header {
       text-align: center;
-      margin-top: 20px;
+      background-color: var(--cor-secundaria);
+    }
+
+    header img {
+      background: #fff;
+      padding: 7px;
+      border-radius: 7px;
+      max-width: 90%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    header p, .frase-estilizada, .frase-estilizada2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.8rem;
+      color: #1d3557;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    section {
+      background: #ffffff;
+      margin-top: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    }
+
+    section.dark {
+      background-color: var(--cor-principal);
+      color: var(--cor-secundaria);
+    }
+
+    section.dark h2 {
+      color: var(--cor-destaque);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: var(--cor-principal);
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .buttonAnimado, .btn-verde {
+      display: inline-block;
+      background-color: linear-gradient(90deg, #226214, #21c521);
+      color: #fff;
+      padding: 16px 32px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 25px;
+      text-decoration: none;
+      margin-top: 30px;
+      animation: pulse 1.5s infinite;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .btn-verde {
+      background: linear-gradient(180deg, #226214, #21c521);
+      animation: pulse 1.5s infinite;
     }
 
     @keyframes pulse {
@@ -90,243 +114,112 @@
       50% { transform: scale(1.08); }
       100% { transform: scale(1); }
     }
-    .centralizar{
-      text-align: center;
-    }
-    .frase-estilizada2 {
-      font-family: 'Dancing Script', cursive;
-      font-size: 1.8rem;
-      color: #2c2c2c;
-      margin: 0;
-      text-align: center;
+
+    .perfil {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      margin-bottom: 30px;
     }
 
-    .frase-estilizada {
-    font-family: 'Dancing Script', cursive;
-    font-size: 1.8rem;
-    color: #000000;
-    margin: 0;
-      }
+    .perfil img {
+      width: 90px;
+      height: 90px;
+      border-radius: 15px;
+      object-fit: cover;
+    }
 
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #1d355715;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      position: relative;
-      background-color: #ffffff;
-      color: #000000;
-      text-align: center;
-      padding: 60px 20px 40px;
-    }
-    header img {
-      background: #fff;
-      padding: 7px;
-      border-radius: 7px;
-      max-width: 400px;
-      height: auto;
-      margin-bottom: 7px;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.0rem;
-      margin-top: 0;
-    }
-    section {
-      max-width: 900px;
-      margin: 30px auto;
-      background: #fff;
-      padding: 40px 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
-      line-height: 1.7;
-    }
-    
-    section h2 {
-      color: #1c491e;
-      margin-top: 0;
-    }
-    .button {
-      display: inline-block;
-      background-color: #388e3c;
-      color: #fff;
-      padding: 16px 32px;
-      font-size: 1.1rem;
+    .perfil .nome {
       font-weight: bold;
-      border-radius: 8px;
-      text-decoration: none;
-      margin-top: 30px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: background 0.3s ease;
+      color: var(--cor-principal);
     }
-    .button:hover {
-      background-color: #2e7d32;
-    }
-    footer {
-      background-color:  #ffffff;
+
+    .comparativo {
       text-align: center;
-      padding: 20px;
+      background: #1d3557;
+    }
+
+    .comparativo img {
+      width: 60px;
+      margin-bottom: 30px;
+    }
+
+    .bonus {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 20px 0 10px;
+    }
+
+    .preco-box {
+      border: 1px solid #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      background-color: var(--cor-principal);
+      color: white;
+      margin: 2rem auto;
+      max-width: 400px;
+    }
+
+    .preco-box .parcelas {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin: 1rem 0 0.5rem;
+    }
+
+    footer {
+      text-align: center;
       font-size: 0.9rem;
       color: #555;
+      padding: 20px;
     }
 
-.buttonAnimado {
-  display: inline-block;
-  background-color: #388e3c;
-  color: #fff;
-  padding: 16px 32px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  border-radius: 25px;
-  text-decoration: none;
-  margin-top: 30px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: background 0.3s ease;
-  animation: pulse 1.5s infinite;
-}
+    @media (max-width: 600px) {
+      .perfil {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .perfil img {
+        margin-bottom: 10px;
+      }
+    }
 
-.equipe {
-  padding: 40px 20px;
-  max-width: 800px;
-  margin: auto;
-}
+    .faq-item {
+      border-bottom: 1px solid #ccc;
+      padding: 15px 0;
+      cursor: pointer;
+    }
 
-.titulo {
-  text-align: center;
-  color: #1d3557;
-  margin-bottom: 40px;
-  font-size: 1.8rem;
-}
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #1d3557;
+      font-weight: bold;
+      font-size: 1rem;
+    }
 
-.perfil {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 30px;
-  gap: 20px;
-}
+    .faq-answer {
+      display: none;
+      padding-top: 10px;
+      color: #333;
+      font-size: 0.95rem;
+    }
 
-.perfil img {
-  width: 90px;
-  height: 90px;
-  object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
+    .faq-item.active .faq-answer {
+      display: block;
+    }
 
-.perfil .nome {
-  font-weight: bold;
-  color: #1d3557;
-}
+    .faq-icon {
+      transition: transform 0.3s ease;
+    }
 
-.perfil p {
-  margin: 5px 0;
-  color: #1d3557;
-  line-height: 1.4;
-}
-
-@media (max-width: 600px) {
-  .perfil {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .perfil img {
-    margin-bottom: 10px;
-  }
-}
-
-.comparativo {
-  padding: 40px 20px;
-  background-color: #f8f9fa;
-  color: #1d3557;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-.comparativo .box {
-  border: 2px solid #1d3557;
-  border-radius: 8px;
-  padding: 30px;
-  max-width: 750px;
-  margin: auto;
-  background-color: #fff;
-}
-
-.comparativo .titulo1 {
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-
-.comparativo .destaque {
-  color: #e76f51;
-  font-weight: bold;
-}
-
-.comparativo .titulo2 {
-  font-weight: bold;
-  font-size: 1.1rem;
-  margin-top: 25px;
-  margin-bottom: 10px;
-}
-
-.comparativo ul {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-.comparativo ul li {
-  margin: 10px 0;
-  font-size: 15px;
-}
-
-.comparativo .slogan {
-  text-align: center;
-  font-size: 16px;
-  margin: 30px auto 10px;
-  color: #1d3557;
-  max-width: 750px;
-}
-
-.comparativo .cta {
-  display: inline-block;
-  background-color: #2d6a4f;
-  color: white;
-  padding: 14px 30px;
-  font-weight: bold;
-  font-size: 16px;
-  text-decoration: none;
-  border-radius: 25px;
-  transition: background-color 0.3s;
-}
-
-.comparativo .cta:hover {
-  background-color: #1b4332;
-}
-
-.logo-responsiva {
-  max-width: 90%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-@media (max-width: 600px) {
-  .logo-responsiva {
-    max-width: 70%;
-  }
-}
-
+    .faq-item.active .faq-icon {
+      transform: rotate(90deg);
+    }
 
   </style>
+
 </head>
 <body>
 
@@ -339,140 +232,327 @@
   <h2 style="color:  #ffffff;">Destrave a mente e o corpo para uma transformação real!</h2>
   <p style="color: #ffffff">Você já tentou de tudo, mas sente que algo sempre te puxa de volta? Dietas restritivas, culpa, efeito sanfona... a verdade é que <b> o problema não está em você — está no método.</b></p>
   <p style="color: #ffffff">Na <b>Comunidade Destrava</b>, você terá <b>acompanhamento psicológico e nutricional durante 6 semanas</b>, com ferramentas que atuam na sua mente, emoções e rotina, para <b>transformar de verdade a sua relação com a comida — e com você.</b></p>
+
+  <p style="margin-top: 40px; text-align: center;">
+    <a href="https://pag.ae/7_UWscJhP" class="btn-verde">QUERO MUDAR</a>
+  </p>
+
 </section>
+
+
+<section class="equipe" style="text-align: center;">
+  <h2 style="color:#1d3557; font-size: 1.8rem; margin-bottom: 30px;">Esse método é pra você que...</h2>
+  <div style="display: flex; flex-direction: column; gap: 15px; max-width: 700px; margin: auto;">
+    <div style="border: 2px solid #1d3557; border-radius: 15px; padding: 15px; font-size: 1rem; color: #1d3557;">
+      Está cansado(a) de dietas que não funcionam a longo prazo
+    </div>
+    <div style="border: 2px solid #1d3557; border-radius: 15px; padding: 15px; font-size: 1rem; color: #1d3557;">
+      Quer aprender a se alimentar melhor sem terrorismo nutricional
+    </div>
+    <div style="border: 2px solid #1d3557; border-radius: 15px; padding: 15px; font-size: 1rem; color: #1d3557;">
+      Sente que precisa de apoio para sair do “efeito sanfona”
+    </div>
+    <div style="border: 2px solid #1d3557; border-radius: 15px; padding: 15px; font-size: 1rem; color: #1d3557;">
+      Quer emagrecer com consciência, respeitando seu corpo e sua rotina
+    </div>
+    <div style="border: 2px solid #1d3557; border-radius: 15px; padding: 15px; font-size: 1rem; color: #1d3557;">
+      Busca motivação e desafios leves para colocar a mudança em prática
+    </div>
+  </div>
+</section>
+
+<section style="background-color: #ffffff; padding: 60px 20px; text-align: center;">
+  <h2 style="color:#1d3557; margin-bottom: 30px;"> <span style="color: #1d3557;">O que você recebe ao entrar?</span></h2>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <div class="swiper mySwiper" style="width: 90%; max-width: 250px; margin: auto;">
+    <div class="swiper-wrapper">
+
+      <!-- Slide -->
+      <div class="swiper-slide" style="position: relative; border-radius: 15px; overflow: hidden; height: 250px;">
+        <img src="Psicologa.jpeg" style="width: 100%; height: 100%; object-fit: cover;">
+        <div style="position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.6); color: white; padding: 10px; font-size: 0.95rem;">
+         <strong> Acompanhamento de 2 nutricionistas e 1 psicóloga </strong>  
+
+        </div>
+      </div>
+
+      <div class="swiper-slide" style="position: relative; border-radius: 15px; overflow: hidden; height: 250px;">
+        <img src="Encontros.png" style="width: 100%; height: 100%; object-fit: cover;">
+        <div style="position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.6); color: white; padding: 10px; font-size: 0.95rem;">
+          <strong>6 encontros ao vivo com conteúdo prático</strong>
+        </div>
+      </div>
+
+      <div class="swiper-slide" style="position: relative; border-radius: 15px; overflow: hidden; height: 250px;">
+        <img src="E-book.png" style="width: 100%; height: 100%; object-fit: cover;">
+        <div style="position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.6); color: white; padding: 10px; font-size: 0.95rem;">
+          <strong>Vídeos, áudios e materiais de apoio semanais</strong>
+        </div>
+      </div>
+
+      <div class="swiper-slide" style="position: relative; border-radius: 15px; overflow: hidden; height: 250px;">
+        <img src="Desafios.png" style="width: 100%; height: 100%; object-fit: cover;">
+        <div style="position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.6); color: white; padding: 10px; font-size: 0.95rem;">
+          <strong>Desafios para colocar em prática</strong>
+        </div>
+      </div>
+
+      <div class="swiper-slide" style="position: relative; border-radius: 15px; overflow: hidden; height: 250px;">
+        <img src="Whatsapp.png" style="width: 100%; height: 100%; object-fit: cover;">
+        <div style="position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.6); color: white; padding: 10px; font-size: 0.95rem;">
+          <strong>Grupo exclusivo no whatsapp</strong>
+        </div>
+      </div>
+
+      <div class="swiper-slide" style="position: relative; border-radius: 15px; overflow: hidden; height: 250px;">
+        <img src="Cardapio.png" style="width: 100%; height: 100%; object-fit: cover;">
+        <div style="position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.6); color: white; padding: 10px; font-size: 0.95rem;">
+          <strong>Cardápio Base (Qualitativo)</strong>
+        </div>
+      </div>
+
+      <!-- Adicione os demais slides aqui da mesma forma -->
+
+    </div>
+
+    <!-- Botões e Paginação -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination" style="margin-top: 20px; position: relative;"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.mySwiper', {
+      loop: true,
+      spaceBetween: 20,
+      slidesPerView: 1,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false
+      },
+    });
+  </script>
+</section>
+
+<section class="comparativo" style="color: #ffffff;">
+    <img src="Cadeado.png" alt="Cadeado">
+    <ul>
+      <li>Cardápio <del>R$150,00</del></li>
+      <li>Lista de substituições <del>R$57,00</del></li>
+      <li>Sessão de psicoterapia <del>R$213,93</del></li>
+      <li>Consulta Nutricional <del>R$202,16</del></li>
+      <li>Suporte no Whatsapp durante as 6 semanas</li>
+    </ul>
+    <p class="bonus">Bônus</p>
+    <ul>
+      <li>E-book de receitas <del>R$57,00</del></li>
+      <li>Manual de Organização e Planejamento <del>R$87,00</del></li>
+      <li>Guia de industrializados <del>R$87,00</del></li>
+    </ul>
+    <div class="preco-box">
+      <p>Somando tudo, o valor seria de R$854,09.<br>Mas hoje, você garante acesso a tudo isso por:</p>
+      <p>10X DE</p>
+      <p class="parcelas">R$46,18</p>
+      <p>OU R$397,00 à vista (1° LOTE)</p>
+    </div>
+    <a href="https://pag.ae/7_UWscJhP" class="btn-verde">QUERO APROVEITAR</a>
+  </section>
 
 <section class="equipe">
-  <h2 style="color:#1d3557">📅 Como vai funcionar?</h2>
-  <p style="color:#1d3557">Durante <b>6 semanas</b>, você fará parte de uma <b>comunidade exclusiva no WhatsApp</b>, onde será acompanhada de perto por <b>duas nutricionistas e uma psicóloga.</b></p>
-  <p style="color:#1d3557">É 100% ONLINE, você vai receber <b>conteúdos semanais</b>, participar de <b>encontros ao vivo</b>, realizar <b>desafios práticos</b>, e terá um espaço de acolhimento, aprendizado e evolução pessoal e alimentar.</p>
+  <ul style="color:#1d3557; border: 2px solid #1d3557; padding: 20px; border-radius: 12px; background-color: #f9f9f9">
+  <h2 style="color:#1d3557; text-align: center;">Por que escolher o Método Destrava?</h2>
+    <li>✅ Integra mente e corpo: você não vai mais lutar contra si mesmo (a).</li>
+    <li>✅ É leve e possível: sem restrições absurdas, com foco na realidade.</li>
+    <li>✅ Você não estará sozinho (a): será guiada por 3 profissionais, com apoio do grupo.</li>
+    <li>✅ Resultados reais e sustentáveis: o objetivo é que você continue mesmo depois das 6 semanas.</li>
+  </ul>
+  
+  <br>
+  <p style="color:#c59c2a; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center; font-size: x-large;">A mudança real começa de dentro para fora.</p>
+  <br>
+
+  <p style="text-align: center"> 🔐 Garanta sua vaga agora mesmo!<br>
+  As vagas são limitadas para garantir um acompanhamento de qualidade.<br>
+Clique no botão abaixo e faça parte da transformação!<br>
+<a href="https://pag.ae/7_UWscJhP" class="btn-verde">QUERO FAZER PARTE</a>
+ </p>
 </section>
 
-<section style="background-color: #1d3557">
-  <h2 style = "color: #c59c2a;">🎁 O que você recebe ao entrar</h2>
-  <ul style = "color: #ffffff;">
-✅ Grupo exclusivo no WhatsApp <br>
-✅ Acompanhamento de 2 nutricionistas e 1 psicóloga<br>
-✅ 6 encontros ao vivo com conteúdo prático<br>
-✅ Vídeos, áudios e materiais de apoio semanais<br>
-✅ Desafios para colocar o conhecimento em ação<br>
-✅ Cardápio qualitativo com sugestões para cada refeição<br>
-✅ Certificado de participação<br>
-✅ Sorteio para o participante mais engajado (a)
-  </ul>
+<section style="background-color: #f5f5f5; padding: 60px 20px;">
+  <h2 style="color:#1d3557; text-align: center; margin-bottom: 40px;">Quem estará com você nessa jornada:</h2>
+
+  <!-- Carrossel das Profissionais -->
+  <div class="swiper mySwiper2" style="max-width: 1000px; margin: auto; padding-bottom: 40px;">
+    <div class="swiper-wrapper">
+
+      <!-- Lais -->
+      <div class="swiper-slide" style="background-color: #1d3557a9; border-radius: 20px; padding: 20px; color: white; width: 250px; text-align: center;">
+        <img src="Lais.jpg" alt="Lais Barros" style="width: 120px; height: 120px; object-fit:contain; border-radius: 8px; margin-bottom: 15px;">
+        <h3 style="margin: 0px 0 0px;">Lais Barros</h3>
+        <p style="margin: 0;"><strong>Nutricionista • CRN3-89262</strong></p>
+        <p style="font-size: 0.95rem; margin-top: 10px;">Reeducação alimentar e mudança de hábitos, te acompanharei na construção de um estilo de vida mais equilibrado e duradouro.</p>
+      </div>
+
+      <!-- Natália -->
+      <div class="swiper-slide" style="background-color: #1d3557a9; border-radius: 20px; padding: 20px; color: white; width: 250px; text-align: center;">
+        <img src="Nati.jpg" alt="Natália Alves" style="width: 120px; height: 120px; object-fit: contain; border-radius: 8px; margin-bottom: 15px;">
+        <h3 style="margin: 10px 0 5px;">Natália Alves</h3>
+        <p style="margin: 0;"><strong>Nutricionista • CRN3-83997</strong></p>
+        <p style="font-size: 0.95rem; margin-top: 10px;">Focada em emagrecimento e ganho de massa muscular, trarei orientações práticas para uma alimentação saudável, leve e sem extremismos.</p>
+      </div>
+
+      <!-- Laryssa -->
+      <div class="swiper-slide" style="background-color: #1d3557a9; border-radius: 20px; padding: 20px; color: white; width: 250px; text-align: center;">
+        <img src="Lary.jpg" alt="Laryssa Queiroz" style="width: 120px; height: 120px; object-fit: contain; border-radius: 0px; margin-bottom: 15px;">
+        <h3 style="margin: 10px 0 5px;">Laryssa Queiroz</h3>
+        <p style="margin: 0;"><strong>Psicóloga • CRP6-200556</strong></p>
+        <p style="font-size: 0.95rem; margin-top: 10px;">Com a abordagem TCC, irei te ajudar a identificar e transformar crenças e comportamentos sabotadores que atrapalham sua relação com a comida.</p>
+      </div>
+
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- Swiper Script -->
+  <script>
+    const swiper2 = new Swiper('.mySwiper2', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: '2',
+      loop: true,
+      spaceBetween: 50,
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 100,
+        modifier: 2,
+        slideShadows: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+  </script>
 </section>
 
-<section class="equipe">
-  <h2 style="color:#1d3557">✨ Esse método é pra você que...</h2>
-  <ul style="color:#1d3557">
-    <li>Está cansado(a) de dietas que não funcionam a longo prazo</li>
-    <li>Quer aprender a se alimentar melhor sem terrorismo nutricional</li>
-    <li>Sente que precisa de apoio para sair do “efeito sanfona”</li>
-    <li>Quer emagrecer com consciência, respeitando seu corpo e sua rotina</li>
-    <li>Busca motivação e desafios leves para colocar a mudança em prática</li>
-     <br>
-  </ul>
+<section style="background-color: #ffffff; padding: 60px 20px; max-width: 800px; margin: auto;">
+  <h2 style="text-align: center; color: #1d3557;">Perguntas frequentes</h2>
 <p style="text-align: center;">
-  <a href="javascript:void(0)" href="https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=195013619-de66a2be-85d5-4e29-944a-2ac37f27f490" target="_blank" class="buttonAnimado"
-     style="display: inline-block; background-color: #a01414; color: white; 
-            padding: 14px 28px; font-size: 1.2rem; font-weight: bold; 
-            text-decoration: none; border-radius: 25px; 
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
-    VAGAS LIMITADAS!! GARANTA SUA VAGA
+  Ainda ficou na dúvida? 
+  <a href="https://wa.me/5511996171497" target="_blank" style="text-decoration: none;">
+    <img src="zap.gif" alt="Fale conosco no WhatsApp" style="width: 28px; vertical-align: middle; margin-left: 8px;">
   </a>
 </p>
 
 
-</section>
-
-<section style="background-color: #1d3557;color: #ffffff;">
-  <h2 style="color: #ffffff;text-align: center">📚 Temas das Semanas</h2>
-  <p><strong>Semana 1 – Como Funciona o Emagrecimento:</strong> Desmistificando o emagrecimento: entenda o que realmente funciona e o que não faz sentido.</p>
-  <p><strong>Semana 2 – Hábitos:</strong> Descubra como seus hábitos moldam sua vida — e como transformá-los de forma leve e eficaz.</p>
-  <p><strong>Semana 3 – Organização e Planejamento (Parte 1):</strong> Aprenda a se organizar com clareza: armário, geladeira, lista de compras inteligente e rotina alimentar.</p>
-  <p><strong>Semana 4 – Organização e Planejamento (Parte 2):</strong> Sugestões práticas de refeições, como fazer boas escolhas no mercado, diferenças entre produtos.</p>
-  <p><strong>Semana 5 – Comportamento:</strong> Entenda seus gatilhos, sabotadores e padrões emocionais relacionados à comida.</p>
-  <p><strong>Semana 6 – Constância e Autonomia:</strong> Como continuar após o programa, manter os resultados e confiar na sua capacidade de seguir sozinho (a).</p>
-</section>
-
-<section class="equipe">
-  <h2 style="color:#1d3557">Por que escolher o Método Destrava?</h2>
-  <ul style="color:#1d3557">
-    <li>Integra mente e corpo: você não vai mais lutar contra si mesmo (a).</li>
-    <li>É leve e possível: sem restrições absurdas, com foco na realidade.</li>
-    <li>Você não estará sozinho (a): será guiada por 3 profissionais, com apoio do grupo.</li>
-    <li>Resultados reais e sustentáveis: o objetivo é que você continue mesmo depois das 6 semanas.</li>
-  </ul>
-
-  <p style="color:#1d3557" class="frase-estilizada2">A mudança real começa de dentro para fora.</p>
-
-</section>
-
-<section style="background-color: #1d3557;color: #ffffff">
-  <h2 style="color: #ffffff;" class="titulo">Quem estará com você nessa jornada</h2>
-
-  <div class="perfil">
-    <img src="Lais.jpg" alt="Lais Barros">
-    <div>
-      <p style="color: #ffffff;"><span style="color: #ffffff" class="nome">🍏 Lais Barros</span> | Nutricionista | <strong>CRN3-89262</strong></p>
-      <p style="color: #ffffff;">Reeducação alimentar e mudança de hábitos, te acompanharei na construção de um estilo de vida mais equilibrado e duradouro.</p>
+  <div class="faq-item">
+    <div class="faq-question">
+      O que é a Comunidade Destrava?
+      <span class="faq-icon">▼</span>
+    </div>
+    <div class="faq-answer">
+      A Comunidade Destrava é um programa de acompanhamento em grupo com nutricionistas e psicóloga, focado em transformar sua relação com a alimentação, sem promessas milagrosas ou dietas restritivas.
     </div>
   </div>
 
-  <div class="perfil">
-    <img src="Nati.jpg" alt="Natália Alves">
-    <div>
-      <p style="color: #ffffff;"><span style="color: #ffffff" class="nome">🍽️ Natália Alves</span> | Nutricionista | <strong>CRN3-83997</strong></p>
-      <p style="color: #ffffff;">Focada em emagrecimento e ganho de massa muscular, trarei orientações práticas para uma alimentação saudável, leve e sem extremismos.</p>
+  <div class="faq-item">
+    <div class="faq-question">
+      Como a Comunidade funciona na prática?
+      <span class="faq-icon">▼</span>
+    </div>
+    <div class="faq-answer">
+      Você terá acesso a conteúdos semanais, desafios, encontros online e materiais de apoio em um grupo fechado no WhatsApp, com suporte das profissionais envolvidas.
     </div>
   </div>
 
-  <div class="perfil">
-    <img src="Lary.jpg" alt="Laryssa Queiroz">
-    <div>
-      <p style="color: #ffffff;"><span style="color: #ffffff" class="nome">🧠 Laryssa Queiroz</span> | Psicóloga | <strong>CRP6-200556</strong></p>
-      <p style="color: #ffffff;">Com a abordagem Terapia Cognitivo-Comportamental (TCC), irei te ajudar a identificar e transformar crenças e comportamentos sabotadores que atrapalham sua relação com a comida.</p>
+  <div class="faq-item">
+    <div class="faq-question">
+      Qual é o foco principal do programa?
+      <span class="faq-icon">▼</span>
+    </div>
+    <div class="faq-answer">
+      Nosso foco é promover mudança de hábitos alimentares, equilíbrio emocional e autonomia no cuidado com a saúde.
     </div>
   </div>
-</section>
 
-<section class="comparativo">
-  <div class="box">
-    <p class="titulo1">Quanto você investiria no acompanhamento tradicional?</p>
-    <p>
-      Se você fosse buscar acompanhamento separado com um(a) nutricionista e um(a) psicólogo(a),
-      com encontros regulares ao longo do mês, o valor total do investimento
-      <span class="destaque">poderia ultrapassar R$800 mensais.</span>
-    </p>
-
-    <p class="titulo2">Na Comunidade Destrava, você recebe tudo isso por um valor muito menor!</p>
-    <ul>
-      <li>✔️ Apoio conjunto de nutricionistas e psicóloga</li>
-      <li>✔️ Conteúdos práticos, aulas e materiais exclusivos</li>
-      <li>✔️ Desafios, guias e ferramentas para aplicar no seu dia a dia</li>
-      <li>✔️ Comunidade acolhedora e suporte contínuo</li>
-      <li>✔️ Acompanhamento sem pressão, com leveza e clareza</li>
-    </ul>
+  <div class="faq-item">
+    <div class="faq-question">
+      Terei acompanhamento individual?
+      <span class="faq-icon">▼</span>
+    </div>
+    <div class="faq-answer">
+      O acompanhamento é em grupo, com direcionamentos gerais, desafios e orientações personalizadas dentro das atividades propostas.
+    </div>
   </div>
 
-  <p class="slogan">
-    🧠 <strong>Menos estresse, mais clareza. Mais cuidado, por muito menos.</strong><br>
-    Você economiza no bolso, e investe no que realmente importa: sua saúde, sua paz e sua constância.
-  </p>
-
-  <p style="text-align: center; font-size: 16px; margin-bottom: 20px;">
-    Garanta sua vaga agora na Comunidade Destrava.
-  </p>
-
-  <div style="text-align: center; ">
-    <a style="background-color: #1b4332" href="#" href="https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=195013619-de66a2be-85d5-4e29-944a-2ac37f27f490" target="_blank" class="buttonAnimado">QUERO ENTRAR AGORA MESMO!</a>
+  <div class="faq-item">
+    <div class="faq-question">
+      Posso tirar dúvidas diretamente com as profissionais?
+      <span class="faq-icon">▼</span>
+    </div>
+    <div class="faq-answer">
+      Sim! Você poderá interagir pelo grupo e nos encontros ao vivo para esclarecer dúvidas.
+    </div>
   </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Quais temas serão abordados na Comunidade?
+      <span class="faq-icon">▼</span>
+    </div>
+    <div class="faq-answer">
+      Os temas incluem: emagrecimento consciente, hábitos, organização e planejamento alimentar, comportamento e constância.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Onde terei acesso aos materiais?
+      <span class="faq-icon">▼</span>
+    </div>
+    <div class="faq-answer">
+      Os materiais serão disponibilizados por meio do Instagram privado da comunidade e grupo exclusivo no WhatsApp.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Preciso ter algum aplicativo específico?
+      <span class="faq-icon">▼</span>
+    </div>
+    <div class="faq-answer">
+      Apenas o WhatsApp e um navegador de internet para acessar os conteúdos no Instagram da comunidade.
+    </div>
+  </div>
+
+  <script>
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(item => {
+      item.addEventListener("click", () => {
+        item.classList.toggle("active");
+      });
+    });
+  </script>
 </section>
 
 
 <footer>
   © 2025 Comunidade Destrava · Todos os direitos reservados.
 </footer>
-
 
 </body>
 </html>
